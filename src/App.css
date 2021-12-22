@@ -14,18 +14,6 @@ body {
   background-attachment: fixed;
 }
 
-/*
-* container css 
-*/
-/* .container {
-    display: flex;
-    margin: auto;
-    width: 50%;
-    min-width: 450px;
-    max-height: 800px;
-    height: 650px;
-} */
-
 .sider {
   width: 100%;
   height: 90vh;
@@ -70,7 +58,7 @@ body {
 .uppertaskarea {
   display: flex;
   justify-content: center;
-  height: 445px;
+  height: 400px;
 }
 .taskarea {
   overflow-y: scroll;
@@ -78,6 +66,7 @@ body {
   scrollbar-width: none;
   width: 100%;
   min-width: 55%;
+  height: 90%;
 }
 .taskarea::-webkit-scrollbar {
   display: none;
@@ -107,7 +96,49 @@ body {
   font-size: 1.4rem;
   cursor: pointer;
 }
+.update span {
+  color: #0D6EFD;
+}
+.view span {
+  color: #FFF;
+}
 .delete span {
   margin-left: 0.8em;
   color: #f12727;
+}
+.view {
+  margin-right: 20px;
+}
+.input-group.mb-3 {
+  width: 90%;
+  margin: auto;
+}
+button#button-addon2 {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+  -webkit-backdrop-filter: blur(0.5px);
+  backdrop-filter: blur(0.5px);
+  color: #FFF;
+  padding: .375rem 1.75rem;
+}
+.input-group input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+}
+.form-control:focus {
+  color: #FFF;
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #fff;
+  box-shadow: none;
+}
+.input-group input::placeholder {
+  color: #FFF;
+}
+.taskInput input[type="text"] {
+  background: transparent;
+  border: none;
+  color: #FFF;
 }
