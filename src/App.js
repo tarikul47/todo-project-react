@@ -1,15 +1,29 @@
+import { useState } from "react";
 import "./App.css";
 import CreateTask from "./components/CreateTask/CreateTask";
 import ShowTasks from "./components/ShowTasks/ShowTasks";
 
 function App() {
   const tasks = [
-    {id: 1, name: 'Task 1', status: 'incomplete'},
-    {id:2,name: 'Task 2', status: 'incomplete'},
-    {id:3, name: 'Task 3', status: 'incomplete'},
-    {id:4,name: 'Task 4', status: 'incomplete'},
-    {id:5,name: 'Task 4', status: 'incomplete'}
-  ]
+    { id: 1, name: "Task 1", status: "incomplete" },
+    { id: 2, name: "Task 2", status: "incomplete" },
+    { id: 3, name: "Task 3", status: "incomplete" },
+    { id: 4, name: "Task 4", status: "incomplete" },
+    { id: 5, name: "Task 5", status: "incomplete" },
+  ];
+  console.log(tasks);
+  const [task, setTask] = useState("");
+  const inputOnChange = (e) => {
+    setTask(e.target.value);
+  };
+  const addTaskHandle = () => {
+    const task = {
+      id: 6,
+      name: document.querySelector("#task").value,
+      status: "incomplete",
+    };
+    tasks.push(task);
+  };
   return (
     <section>
       <div className="container">
@@ -31,7 +45,11 @@ function App() {
                     All <span style={{ color: "#FFBD44" }}>Task</span> List :(
                   </p>
                   <ShowTasks tasks={tasks}></ShowTasks>
-                 <CreateTask addTaskHandle = {'addTaskHandle'} ></CreateTask>
+                  <CreateTask
+                    inputOnChange={inputOnChange}
+                    task={task}
+                    addTaskHandle={addTaskHandle}
+                  ></CreateTask>
                 </div>
               </div>
             </div>
