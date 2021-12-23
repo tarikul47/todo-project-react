@@ -1,29 +1,22 @@
 import { useState } from "react";
+import shortid from "shortid";
 import "./App.css";
 import CreateTask from "./components/CreateTask/CreateTask";
 import ShowTasks from "./components/ShowTasks/ShowTasks";
 
 function App() {
-  const tasks = [
-    { id: 1, name: "Task 1", status: "incomplete" },
-    { id: 2, name: "Task 2", status: "incomplete" },
-    { id: 3, name: "Task 3", status: "incomplete" },
-    { id: 4, name: "Task 4", status: "incomplete" },
-    { id: 5, name: "Task 5", status: "incomplete" },
-  ];
-  console.log(tasks);
-  const [task, setTask] = useState("");
-  const inputOnChange = (e) => {
-    setTask(e.target.value);
-  };
-  const addTaskHandle = () => {
+  const [tasks, setTasks] = useState([]);
+  const addNewTask = (text) => {
     const task = {
-      id: 6,
-      name: document.querySelector("#task").value,
-      status: "incomplete",
+      id: shortid.generate(),
+      name: text,
+      status: false,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     };
-    tasks.push(task);
+    setTasks([task,...tasks]);
   };
+
   return (
     <section>
       <div className="container">
@@ -39,17 +32,13 @@ function App() {
               <div className="row">
                 <div className="col-lg-9 mx-auto text-white">
                   <div className="my-name">
-                    <h2>Hello, Guest !!!</h2>
+                    <h2>Hello, Guest !!! {tasks.length}</h2>
                   </div>
                   <p>
                     All <span style={{ color: "#FFBD44" }}>Task</span> List :(
                   </p>
+                  <CreateTask addNewTask={addNewTask}></CreateTask>
                   <ShowTasks tasks={tasks}></ShowTasks>
-                  <CreateTask
-                    inputOnChange={inputOnChange}
-                    task={task}
-                    addTaskHandle={addTaskHandle}
-                  ></CreateTask>
                 </div>
               </div>
             </div>

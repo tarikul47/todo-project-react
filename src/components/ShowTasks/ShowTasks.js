@@ -2,10 +2,6 @@ import React from "react";
 import Button from "../Button/Button";
 
 const ShowTasks = ({ tasks }) => {
-  //console.log(tasks);
-  const inputData = () => {
-
-  }
   return (
     <div className="uppertaskarea">
       <div className="taskarea">
@@ -14,7 +10,7 @@ const ShowTasks = ({ tasks }) => {
             {tasks.map((task) => (
               <div key={task.id} className="tasks">
                 <p>{task.name}</p>
-                <input className="taskInput" type="text" value={task.name} onChange={inputData}/>
+                {/* <input className="taskInput" type="text" value={task.name} onChange={inputData}/> */}
                 <div className="task-update-delete">
                   <Button class={'update view'} icon={'fas fa-eye'}></Button>
                   <Button class={'update'} icon={'fas fa-pen-square'}></Button>

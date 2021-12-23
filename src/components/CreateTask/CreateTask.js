@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
-const createTask = (props) => {
-  //console.log(props);
+const CreateTask = ({ addNewTask }) => {
+  const [text, setText] = useState("");
   return (
     <div className="addTask">
       <div className="input-group mb-3">
@@ -12,14 +12,23 @@ const createTask = (props) => {
           placeholder="Todo"
           aria-label="Todo"
           aria-describedby="button-addon2"
-          value={props.task}
-          onChange={props.inputOnChange}
+          value={text}
+          onChange={(e) => {
+            setText(e.target.value);
+          }}
         />
         <button
           className="btn btn-outline-secondary"
           type="button"
           id="button-addon2"
-          onClick={props.addTaskHandle}
+          onClick={() => {
+            if (text) {
+              addNewTask(text);
+              setText("");
+            } else {
+              alert("Please input task name");
+            }
+          }}
         >
           ADD
         </button>
@@ -28,4 +37,4 @@ const createTask = (props) => {
   );
 };
 
-export default createTask;
+export default CreateTask;
