@@ -24,8 +24,10 @@ function App() {
    * Delete task
    * @param {string} task
    */
-  const deletetask = (task) => {
-    console.log("Console from");
+  const deleteTask = (taskId) => {
+    console.log("Console from app for delete", taskId);
+    const newTasks = tasks.filter(task => task.id !== taskId)
+    setTasks(newTasks)
   };
   console.log(tasks);
   return (
@@ -52,8 +54,7 @@ function App() {
                   <div className="uppertaskarea">
                     <div className="taskarea">
                       <ShowTasks
-                        key={shortid.generate()}
-                        deletetask={deletetask}
+                        deleteTask={deleteTask}
                         tasks={tasks}
                       ></ShowTasks>
                     </div>

@@ -12,7 +12,7 @@ const SingleTask = (props) => {
       <div className="task-update-delete">
         <Accordion id={props.task.id} classAttr={'update view'} icon={'fas fa-eye'}></Accordion>
         <Button classAttr ={'update'} icon={'fas fa-pen-square'}></Button>
-        <Button classAttr ={'delete'} icon={'fas fa-times-circle'}></Button>
+        <Button id={props.task.id} deleteTask={props.deleteTask} classAttr ={'delete'} icon={'fas fa-times-circle'}></Button>
       </div>
     </div>
     <div id={`flush-collapse${props.task.id}`} className="accordion-collapse collapse">
