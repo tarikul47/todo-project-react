@@ -2,7 +2,7 @@ import React from "react";
 
 const Accordion = (props) => {
   return (
-    <div className={props.class}>
+    <div className={props.classAttr}>
       <span
         data-bs-toggle="collapse"
         data-bs-target={`#flush-collapse${props.id}`}

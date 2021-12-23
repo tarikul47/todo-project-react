@@ -8,26 +8,26 @@ function App() {
   const [tasks, setTasks] = useState([]);
   /**
    * Craete add task
-   * @param {string} text 
+   * @param {string} text
    */
   const addNewTask = (text) => {
     const task = {
       id: shortid.generate(),
       name: text,
-      status: 'Incomplete',
+      status: "Incomplete",
       createdAt: new Date(),
       updatedAt: new Date(),
     };
-    setTasks([task,...tasks]);
+    setTasks([task, ...tasks]);
   };
   /**
-   * Delete task 
-   * @param {string} task 
+   * Delete task
+   * @param {string} task
    */
   const deletetask = (task) => {
-      console.log('Console from')
-  }
-
+    console.log("Console from");
+  };
+  console.log(tasks);
   return (
     <section>
       <div className="container">
@@ -49,7 +49,15 @@ function App() {
                     All <span style={{ color: "#FFBD44" }}>Task</span> List :(
                   </p>
                   <CreateTask addNewTask={addNewTask}></CreateTask>
-                  <ShowTasks deletetask={deletetask} tasks={tasks}></ShowTasks>
+                  <div className="uppertaskarea">
+                    <div className="taskarea">
+                      <ShowTasks
+                        key={shortid.generate()}
+                        deletetask={deletetask}
+                        tasks={tasks}
+                      ></ShowTasks>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
