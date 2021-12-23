@@ -21,13 +21,7 @@ const ShowTasks = ({ tasks }) => {
                   <Button class={'delete'} icon={'fas fa-times-circle'}></Button>
                 </div>
               </div>
-              <div id={`flush-collapse${task.id}`} class="accordion-collapse collapse">
-                <div style={{backgroundColor: '#FF605C'}} class="accordion-body tasks">
-                  {task.name} <br />
-                  {task.status} <br />
-                  {task.name}<br />
-                </div>
-              </div>
+              <SingleTask task={task}></SingleTask>
               </>
             ))}
           </>

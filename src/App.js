@@ -3,10 +3,13 @@ import shortid from "shortid";
 import "./App.css";
 import CreateTask from "./components/CreateTask/CreateTask";
 import ShowTasks from "./components/ShowTasks/ShowTasks";
-import SingleTask from "./components/SingleTask/SingleTask";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  /**
+   * Craete add task
+   * @param {string} text 
+   */
   const addNewTask = (text) => {
     const task = {
       id: shortid.generate(),
@@ -17,6 +20,13 @@ function App() {
     };
     setTasks([task,...tasks]);
   };
+  /**
+   * Delete task 
+   * @param {string} task 
+   */
+  const deletetask = (task) => {
+      console.log('Console from')
+  }
 
   return (
     <section>
@@ -39,7 +49,7 @@ function App() {
                     All <span style={{ color: "#FFBD44" }}>Task</span> List :(
                   </p>
                   <CreateTask addNewTask={addNewTask}></CreateTask>
-                  <ShowTasks tasks={tasks}></ShowTasks>
+                  <ShowTasks deletetask={deletetask} tasks={tasks}></ShowTasks>
                 </div>
               </div>
             </div>
