@@ -104,18 +104,19 @@ const TodoList = () => {
                                 </div>
                               </>
                             ) : (
-                              ""
+                              <>
+                                <div id="taskUpdate" className="update">
+                                  <span onClick={() => setTodoEditing(index)}>
+                                    <i className="fas fa-pen-square"></i>
+                                  </span>
+                                </div>
+                                <div className="delete">
+                                  <span onClick={() => deleteTodo(index)}>
+                                    <i className="fas fa-trash-alt"></i>
+                                  </span>
+                                </div>
+                              </>
                             )}
-                            <div id="taskUpdate" className="update">
-                              <span onClick={() => setTodoEditing(index)}>
-                                <i className="fas fa-pen-square"></i>
-                              </span>
-                            </div>
-                            <div className="delete">
-                              <span onClick={() => deleteTodo(index)}>
-                                <i className="fas fa-trash-alt"></i>
-                              </span>
-                            </div>
                           </div>
                         </div>
                       ))}
