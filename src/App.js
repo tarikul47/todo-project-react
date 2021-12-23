@@ -3,6 +3,7 @@ import shortid from "shortid";
 import "./App.css";
 import CreateTask from "./components/CreateTask/CreateTask";
 import ShowTasks from "./components/ShowTasks/ShowTasks";
+import SingleTask from "./components/SingleTask/SingleTask";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -10,7 +11,7 @@ function App() {
     const task = {
       id: shortid.generate(),
       name: text,
-      status: false,
+      status: 'Incomplete',
       createdAt: new Date(),
       updatedAt: new Date(),
     };
