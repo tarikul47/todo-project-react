@@ -29,6 +29,13 @@ function App() {
     const newTasks = tasks.filter(task => task.id !== taskId)
     setTasks(newTasks)
   };
+  /**
+   * Edit task 
+   * @param {string} taskId 
+   */
+  const editTask = (taskId) => {
+    console.log("calling for edit task", taskId)
+  }
   console.log(tasks);
   return (
     <section>
@@ -54,6 +61,7 @@ function App() {
                   <div className="uppertaskarea">
                     <div className="taskarea">
                       <ShowTasks
+                        editTask={editTask}
                         deleteTask={deleteTask}
                         tasks={tasks}
                       ></ShowTasks>

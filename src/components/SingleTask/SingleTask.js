@@ -12,7 +12,7 @@ const SingleTask = (props) => {
       {/* <input className="taskInput" type="text" value={task.name} onChange={inputData}/> */}
       <div className="task-update-delete">
         <Accordion id={props.task.id} classAttr={'update view'} icon={'fas fa-eye'}></Accordion>
-        <Button classAttr ={'update'} icon={'fas fa-pen-square'}></Button>
+        <Button id={props.task.id} editTask={props.editTask} classAttr ={'update'} icon={'fas fa-pen-square'}></Button>
         <Button id={props.task.id} deleteTask={props.deleteTask} classAttr ={'delete'} icon={'fas fa-times-circle'}></Button>
       </div>
     </div>
