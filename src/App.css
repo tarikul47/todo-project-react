@@ -99,14 +99,14 @@ body {
 .update span {
   color: #0D6EFD;
 }
-.view span {
+.cross span {
   color: #FFF;
 }
 .delete span {
   margin-left: 0.8em;
   color: #f12727;
 }
-.view {
+.cross {
   margin-right: 20px;
 }
 .input-group.mb-3 {
@@ -141,4 +141,7 @@ button#button-addon2 {
   background: transparent;
   border: none;
   color: #FFF;
+}
+.todo-complete{
+  border: 1px solid #00ca4e
 }
