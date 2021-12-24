@@ -78,7 +78,7 @@ const TodoList = () => {
                             todo.status === "Complete" && "complete"
                           }`}
                         >
-                          <p>
+                          
                             {todoEditing === index ? (
                               <TodoEdit
                                 todo={todo}
@@ -89,11 +89,12 @@ const TodoList = () => {
                               <>
                                 {todo.status === "Incomplete" && todo.name}
                                 {todo.status === "Complete" && (
-                                  <del>{todo.name}</del>
+                                  <p><del>{todo.name}</del></p>
+                                  
                                 )}
                               </>
                             )}
-                          </p>
+                        
                           <div className="task-update-delete">
                             {todoEditing === index ? (
                               <>

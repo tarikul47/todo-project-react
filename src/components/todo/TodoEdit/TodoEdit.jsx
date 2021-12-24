@@ -11,7 +11,7 @@ const TodoEdit = (props) => {
         index: index,
         todo: {
           name: title,
-          status
+          status,
         },
       });
     }
@@ -41,14 +41,11 @@ const TodoEdit = (props) => {
         <option value="Complete">Complete</option>
         <option value="Incomplete">Incomplete</option>
       </select>
-
-      <button
-        className="btn btn-outline-secondary"
-        type="button"
-        onClick={(e) => editTodo()}
-      >
-        save
-      </button>
+      <div className="delete save">
+        <span onClick={() => editTodo(index)}>
+          <i className="fas fa-save"></i>
+        </span>
+      </div>
     </div>
   );
 };

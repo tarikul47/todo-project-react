@@ -100,7 +100,7 @@ body {
   color: #0D6EFD;
 }
 .cross span {
-  color: #FFF;
+  color: #f12727;
 }
 .delete span {
   margin-left: 0.8em;
@@ -108,6 +108,11 @@ body {
 }
 .cross {
   margin-right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.save{
+  color: #00ca4e;
 }
 .input-group.mb-3 {
   width: 90%;
@@ -125,6 +130,7 @@ button#button-addon2 {
   background: transparent;
   border: none;
   border-bottom: 1px solid #fff;
+  color: #FFF;
 }
 .form-control:focus {
   color: #FFF;
@@ -144,4 +150,13 @@ button#button-addon2 {
 }
 .todo-complete{
   border: 1px solid #00ca4e
+}
+select.form-select {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #FFF;
+  color: #FFF;
+}
+.form-select:focus {
+  box-shadow: none;
 }
